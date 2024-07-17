@@ -1,7 +1,7 @@
 # Voyagar-Travel-Diary
 Final project for ReactJS course in SoftUni. 
 
-# Voyagar-Travel-Diary
+<!-- # Voyagar-Travel-Diary
 
 Voyagar-Travel-Diary is a travel diary application where users can document and share their travel experiences, follow each other, and explore reviews of various places.
 
@@ -33,4 +33,4 @@ Voyagar-Travel-Diary is a travel diary application where users can document and 
 
 ```bash
 git clone https://github.com/yourusername/Voyagar-Travel-Diary.git
-cd Voyagar-Travel-Diary
+cd Voyagar-Travel-Diary -->
