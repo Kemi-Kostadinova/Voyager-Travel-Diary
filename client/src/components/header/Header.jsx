@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
     return (
         <header className="absolute inset-x-0 top-0 z-50">
@@ -6,14 +8,14 @@ export default function Header() {
                     aria-label="Global"
                 >
                     <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-6 w-auto"
                                 src="../public/Logo.svg"
                                 alt="Voyager"
                             />
-                        </a>
+                        </Link>
                     </div>
                     <div className="flex lg:hidden">
                         <button
@@ -52,9 +54,9 @@ export default function Header() {
                         </a>
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900" style={{ color: '#0CA9E8' }}>
+                        <Link to="/log-in" className="text-sm font-semibold leading-6 text-gray-900" style={{ color: '#0CA9E8' }}>
                             Log in <span aria-hidden="true">→</span>
-                        </a>
+                        </Link>
                     </div>
                 </nav>
                 {/* Mobile menu, show/hide based on menu open state. */}
@@ -121,13 +123,12 @@ export default function Header() {
                                     </a>
                                 </div>
                                 <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                        style={{ color: '#0CA9E8' }}
+                                    <Link
+                                        to="/log-in"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#0CA9E8] hover:bg-gray-50"
                                     >
                                         Log in
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

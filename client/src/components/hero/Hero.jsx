@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Hero() {
     return (
         <div className="bg-white">
@@ -25,14 +27,13 @@ export default function Hero() {
                             Discover hidden gems, share your adventures, and connect with fellow travelers. Start exploring today!
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <a
-                                href="#"
-                                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                style={{ backgroundColor: '#0CA9E8' }}
+                            <Link
+                                to="/sign-up"
+                                className="rounded-md bg-[#0CA9E8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 
                             >
                                 Get started
-                            </a>
+                            </Link>
                             <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                                 Explore destinations <span aria-hidden="true">→</span>
                             </a>
