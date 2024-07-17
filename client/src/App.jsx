@@ -1,6 +1,7 @@
 import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
 import Search from "./components/search/Search"
+import Footer from "./components/footer/Footer"
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
 			<Header />
 			<Hero />
 			<Search />
+			<Footer />
 		</>
 	)
 }
