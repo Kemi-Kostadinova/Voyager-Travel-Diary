@@ -1,5 +1,6 @@
 import Header from "./components/header/Header"
 import Hero from "./components/hero/Hero"
+import Search from "./components/search/Search"
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
 		<>
 			<Header />
 			<Hero />
+			<Search />
 		</>
 	)
 }
