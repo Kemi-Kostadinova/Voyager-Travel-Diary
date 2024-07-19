@@ -34,9 +34,9 @@ export default function Hero() {
                         >
                             Get started
                         </Link>
-                        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                        <Link to="/discover" className="text-sm font-semibold leading-6 text-gray-900 hover:text-[#0CA9E8]">
                             Explore destinations <span aria-hidden="true">→</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
