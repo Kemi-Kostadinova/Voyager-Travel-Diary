@@ -1,3 +1,5 @@
+import CommentSection from "../comment-section/CommentSection";
+
 export default function Details() {
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
@@ -6,7 +8,7 @@ export default function Details() {
                 style={{
                     height: 450,
                     backgroundImage:
-                        'url("https://api.time.com/wp-content/uploads/2020/07/never-trumpers-2020-election-01.jpg?quality=85&w=1201&h=676&crop=1")'
+                        'url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
                 }}
             ></div>
             <div className="max-w-2xl mx-auto">
@@ -15,7 +17,7 @@ export default function Details() {
                         <div className="flex items-center justify-between gap-6 mb-6">
                             <div className="text">
                                 <h1 href="#" className="text-gray-900 font-bold text-3xl mb-2">
-                                    Revenge of the Never Trumpers
+                                    Landscape you can never forget
                                 </h1>
 
                                 <p className="text-gray-700 text-xs mt-2">
@@ -70,25 +72,20 @@ export default function Details() {
                         </p>
                     </div>
                 </div>
-                <div className="mt-10 flex items-center justify-end gap-x-6">
-                        <a
-                            href="#"
-                            className="rounded-md bg-[#0CA9E8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-
-                        >
-                            Edit
-                        </a>
-
-                        <a
-                            href="#"
-                            className="rounded-md bg-[#0CA9E8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-
-                        >
+                <div className="w-full justify-end items-start gap-6 inline-flex">
+                    <button className="sm:w-fit w-full px-5 py-2.5 rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] hover:bg-gray-200 hover:border-transparent transition-all duration-200 ease-in-out border border-gray-200 justify-center items-center flex">
+                        <span className="px-2 text-gray-900 text-base font-semibold leading-relaxed">
                             Delete
-                        </a>
-
-                    </div>
+                        </span>
+                    </button>
+                    <button className="sm:w-fit w-full px-5 py-2.5 bg-[#0CA9E8] hover:bg-[#008bb5] transition-all duration-200 ease-in-out rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
+                        <span className="px-2 py-px text-white text-base font-semibold leading-relaxed">
+                            Edit
+                        </span>
+                    </button>
+                </div>
             </div>
+            <CommentSection />
         </div>
 
     )
