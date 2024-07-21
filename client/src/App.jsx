@@ -8,6 +8,7 @@ import SignUp from './components/sign-up/SignUp'
 import Search from "./components/search/Search"
 import AboutUs from './components/about-us/AboutUs'
 import NotFound from './components/not-found/NotFound'
+import Catalog from './components/catalog/Catalog'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='/about-us' element={<AboutUs />} />
+				<Route path='/discover' element={<Catalog />} />
 				<Route path='/log-in' element={<LogIn />} />
 				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='*' element={<NotFound />} />
