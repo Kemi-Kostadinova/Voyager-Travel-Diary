@@ -13,7 +13,7 @@ export default function CatalogItem({
 
     return (
         <article className={styles.card}>
-            <a href="/blog/slug" className={styles.cardLink}></a>
+            <Link to={`/details/${_id}`} className={styles.cardLink}></Link>
             <div className={styles.imageContainer}>
                 <img
                     src={image}
@@ -72,7 +72,7 @@ export default function CatalogItem({
                 </div>
             </div>
             <h3 className={styles.cardTitle}>
-                <a href="/blog/slug">{title}</a>
+                <Link to={`/details/${_id}`}>{title}</Link>
             </h3>
         </article>
     )

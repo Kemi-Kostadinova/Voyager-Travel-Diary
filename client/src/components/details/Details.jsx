@@ -91,7 +91,7 @@ export default function Details() {
                     </button>
                 </div>
             </div>
-            <CommentSection />
+            <CommentSection comments={travelEntry.comments} />
         </div>
 
     )

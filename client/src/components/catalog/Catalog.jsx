@@ -1,3 +1,4 @@
+import Spinner from '../spinner/Spinner';
 import styles from './Catalog.module.css'
 import CatalogItem from './catalog-item/CatalogItem';
 
@@ -9,7 +10,7 @@ export default function Catalog({ travelEntries }) {
                     <div className={styles.grid}>
                         {travelEntries.length > 0
                             ? travelEntries.map(travelEntry => <CatalogItem key={travelEntry._id} {...travelEntry} />)
-                            : <p>No entries yet</p>
+                            : <Spinner />
                         }
                     </div>
                 </div>
