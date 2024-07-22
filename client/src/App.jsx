@@ -10,6 +10,7 @@ import AboutUs from './components/about-us/AboutUs'
 import NotFound from './components/not-found/NotFound'
 import Catalog from './components/catalog/Catalog'
 import Details from './components/details/Details'
+import Profile from './components/profile/Profile'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 				<Route path='/about-us' element={<AboutUs />} />
 				<Route path='/discover' element={<Catalog />} />
 				<Route path='/details' element={<Details />} />
+				<Route path='/profile' element={<Profile />} />
 				<Route path='/log-in' element={<LogIn />} />
 				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='*' element={<NotFound />} />
