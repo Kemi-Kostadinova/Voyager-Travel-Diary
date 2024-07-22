@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import styles from './Catalog.module.css'
 import CatalogItem from './catalog-item/CatalogItem';
 

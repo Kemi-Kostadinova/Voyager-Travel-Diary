@@ -8,4 +8,6 @@ export const getAll = async() => {
     const travelEntries = Object.values(result);
 
     return travelEntries;
-} 
+};
+
+export const getOne = (travelEntryId) => request.get(`${BASE_URL}/${travelEntryId}`);

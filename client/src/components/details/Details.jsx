@@ -1,14 +1,28 @@
 import CommentSection from "../comment-section/CommentSection";
 
+import { useState, useEffect } from "react";
+import * as travelEntriesAPI from "../../api/travelEntriesAPI";
+import { useParams } from "react-router-dom";
+
 export default function Details() {
+    const [travelEntry, setTravelEntry] = useState({});
+    const { travelEntryId } = useParams();
+
+    useEffect(() => {
+        (async () => {
+            const result = await travelEntriesAPI.getOne(travelEntryId);
+
+            setTravelEntry(result);
+        })();
+    }, [])
+
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
             <div
                 className="bg-cover h-64 text-center overflow-hidden"
                 style={{
                     height: 450,
-                    backgroundImage:
-                        'url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")'
+                    backgroundImage:`url(${travelEntry.image})`
                 }}
             ></div>
             <div className="max-w-2xl mx-auto">
@@ -16,8 +30,8 @@ export default function Details() {
                     <div className="">
                         <div className="flex items-center justify-between gap-6 mb-6">
                             <div className="text">
-                                <h1 href="#" className="text-gray-900 font-bold text-3xl mb-2">
-                                    Landscape you can never forget
+                                <h1 className="text-gray-900 font-bold text-3xl mb-2">
+                                    {travelEntry.title}
                                 </h1>
 
                                 <p className="text-gray-700 text-xs mt-2">
@@ -26,7 +40,7 @@ export default function Details() {
                                         href="#"
                                         className="text-[#0CA9E8] font-medium hover:text-[#008bb5] transition duration-200 ease-in-out"
                                     >
-                                        Ahmad Sultani
+                                        {travelEntry.author && travelEntry.author.username}
                                     </a>
                                 </p>
                             </div>
@@ -60,15 +74,7 @@ export default function Details() {
 
 
                         <p className="text-base leading-8 my-5">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text ever
-                            since the 1500s, when an unknown printer took a galley of type and
-                            scrambled it to make a type specimen book. It has survived not only
-                            five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with
-                            the release of Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like Aldus PageMaker
-                            including versions of Lorem Ipsum.
+                            {travelEntry.description}
                         </p>
                     </div>
                 </div>

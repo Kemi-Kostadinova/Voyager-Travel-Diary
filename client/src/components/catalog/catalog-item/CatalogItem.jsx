@@ -1,10 +1,9 @@
+import { Link } from 'react-router-dom';
+
 import styles from './CatalogItem.module.css'
-
-
 export default function CatalogItem({
     _id,
     title,
-    description,
     image,
     location,
     author,
@@ -12,7 +11,6 @@ export default function CatalogItem({
     likes
 }) {
 
-    console.log(author.username);
     return (
         <article className={styles.card}>
             <a href="/blog/slug" className={styles.cardLink}></a>
@@ -39,8 +37,8 @@ export default function CatalogItem({
                     </svg>
                     <span className={styles.likesCount}>{likes}</span>
                 </div>
-                <a
-                    href="/blog/slug"
+                <Link
+                    to={`/details/${_id}`}
                     className={styles.readArticle}
                 >
                     Read more
@@ -58,7 +56,7 @@ export default function CatalogItem({
                             d="M13 5l7 7-7 7M5 5l7 7-7 7"
                         />
                     </svg>
-                </a>
+                </Link>
             </div>
             <div className={styles.cardFooter}>
                 <div className={styles.author}>

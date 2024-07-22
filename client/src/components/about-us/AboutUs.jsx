@@ -62,7 +62,7 @@ export default function AboutUs() {
                         <div className=" overflow-hidden rounded-xl col-span-3 max-h-[20rem]">
                             <img
                                 className="h-full w-full object-cover "
-                                src="https://img.freepik.com/free-photo/happy-hipster-company-friends-traveling-around-world_285396-3652.jpg?t=st=1721382794~exp=1721386394~hmac=1a15a50d8df0207f15db6d9fbc43f9a9d7864ec2e5f00a229a30032c8ec7ab72&w=996"
+                                src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt=""
                             />
                         </div>
