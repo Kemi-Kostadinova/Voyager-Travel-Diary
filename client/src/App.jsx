@@ -8,7 +8,7 @@ import SignUp from './components/sign-up/SignUp'
 import Search from "./components/search/Search"
 import AboutUs from './components/about-us/AboutUs'
 import NotFound from './components/not-found/NotFound'
-import Catalog from './components/catalog/Catalog'
+import DiscoverPage from './components/discover-page/DiscoverPage'
 import Details from './components/details/Details'
 import Profile from './components/profile/Profile'
 
@@ -20,7 +20,7 @@ function App() {
 			<Routes>
 				<Route path='/' element={<HomePage />} />
 				<Route path='/about-us' element={<AboutUs />} />
-				<Route path='/discover' element={<Catalog />} />
+				<Route path='/discover' element={<DiscoverPage />} />
 				<Route path='/details' element={<Details />} />
 				<Route path='/profile' element={<Profile />} />
 				<Route path='/log-in' element={<LogIn />} />

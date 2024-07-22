@@ -1,63 +1,119 @@
 {
-    "travelEntries": [
-      {
-        "id": "travel-001",
-        "name": "Exploring the Alps",
+    "travel-001": {
+        "_id": "travel-001",
+        "title": "Exploring the Alps",
+        "location": "Switzerland",
         "description": "A breathtaking journey through the Swiss Alps.",
+        "image": "https://images.unsplash.com/photo-1530878902700-5ad4f9e4c318?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "author": {
-          "id": "author-001",
-          "username": "travelGuru",
-          "posts": ["travel-001", "travel-002"]
+            "_id": "author-001",
+            "username": "travelGuru",
+            "profileImage": "https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "posts": [
+                "travel-001",
+                "travel-002"
+            ]
         },
         "dateOfCreation": "2024-07-22",
         "likes": 150,
         "comments": [
-          {
-            "id": "comment-001",
-            "content": "Amazing trip! The photos are stunning!",
-            "author": {
-              "id": "author-002",
-              "username": "mountainLover",
-              "posts": ["travel-003"]
+            {
+                "_id": "comment-001",
+                "content": "Amazing trip! The photos are stunning!",
+                "author": {
+                    "_id": "author-002",
+                    "username": "mountainLover",
+                    "posts": [
+                        "travel-003"
+                    ]
+                },
+                "dateOfCreation": "2024-07-23"
             },
-            "dateOfCreation": "2024-07-23"
-          },
-          {
-            "id": "comment-002",
-            "content": "Thanks for sharing your experience. Inspired to visit!",
-            "author": {
-              "id": "author-003",
-              "username": "adventureSeeker",
-              "posts": []
-            },
-            "dateOfCreation": "2024-07-24"
-          }
+            {
+                "_id": "comment-002",
+                "content": "Thanks for sharing your experience. Inspired to visit!",
+                "author": {
+                    "_id": "author-003",
+                    "username": "adventureSeeker",
+                    "posts": []
+                },
+                "dateOfCreation": "21/07/2024"
+            }
         ]
-      },
-      {
-        "id": "travel-002",
-        "name": "Discovering the Sahara",
+    },
+    "travel-002": {
+        "_id": "travel-002",
+        "title": "Discovering the Sahara",
+        "location": "Switzerland",
         "description": "An adventurous trip through the Sahara Desert.",
+        "image": "https://images.unsplash.com/photo-1523289149715-594065d1d3e7?q=80&w=1929&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "author": {
-          "id": "author-001",
-          "username": "travelGuru",
-          "posts": ["travel-001", "travel-002"]
+            "_id": "author-001",
+            "username": "travelGuru",
+            "profileImage": "https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "posts": [
+                "travel-001",
+                "travel-002"
+            ]
         },
         "dateOfCreation": "2024-06-15",
         "likes": 200,
         "comments": [
-          {
-            "id": "comment-003",
-            "content": "Incredible journey! The desert looks magical.",
-            "author": {
-              "id": "author-004",
-              "username": "desertFox",
-              "posts": ["travel-004"]
-            },
-            "dateOfCreation": "2024-06-16"
-          }
+            {
+                "_id": "comment-003",
+                "content": "Incredible journey! The desert looks magical.",
+                "author": {
+                    "_id": "author-004",
+                    "username": "desertFox",
+                    "posts": [
+                        "travel-004"
+                    ]
+                },
+                "dateOfCreation": "21/07/2024"
+            }
         ]
-      }
-    ]
-  }
-  
+    },
+    "travel-003": {
+        "_id": "travel-003",
+        "title": "Exploring the Great Barrier Reef",
+        "location": "Australia",
+        "description": "A mesmerizing dive into the vibrant underwater world of the Great Barrier Reef.",
+        "image": "https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "author": {
+            "_id": "author-002",
+            "username": "oceanExplorer",
+            "profileImage": "https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "posts": [
+                "travel-003"
+            ]
+        },
+        "dateOfCreation": "2024-07-10",
+        "likes": 350,
+        "comments": [
+            {
+                "_id": "comment-004",
+                "content": "The reef looks stunning! I can't wait to visit.",
+                "author": {
+                    "_id": "author-005",
+                    "username": "reefLover",
+                    "posts": [
+                        "travel-003"
+                    ]
+                },
+                "dateOfCreation": "22/07/2024"
+            },
+            {
+                "_id": "comment-005",
+                "content": "Amazing photos! What diving gear did you use?",
+                "author": {
+                    "_id": "author-006",
+                    "username": "diveMaster",
+                    "posts": [
+                        "travel-003"
+                    ]
+                },
+                "dateOfCreation": "23/07/2024"
+            }
+        ]
+    }
+}
