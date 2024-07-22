@@ -1,0 +1,63 @@
+{
+    "travelEntries": [
+      {
+        "id": "travel-001",
+        "name": "Exploring the Alps",
+        "description": "A breathtaking journey through the Swiss Alps.",
+        "author": {
+          "id": "author-001",
+          "username": "travelGuru",
+          "posts": ["travel-001", "travel-002"]
+        },
+        "dateOfCreation": "2024-07-22",
+        "likes": 150,
+        "comments": [
+          {
+            "id": "comment-001",
+            "content": "Amazing trip! The photos are stunning!",
+            "author": {
+              "id": "author-002",
+              "username": "mountainLover",
+              "posts": ["travel-003"]
+            },
+            "dateOfCreation": "2024-07-23"
+          },
+          {
+            "id": "comment-002",
+            "content": "Thanks for sharing your experience. Inspired to visit!",
+            "author": {
+              "id": "author-003",
+              "username": "adventureSeeker",
+              "posts": []
+            },
+            "dateOfCreation": "2024-07-24"
+          }
+        ]
+      },
+      {
+        "id": "travel-002",
+        "name": "Discovering the Sahara",
+        "description": "An adventurous trip through the Sahara Desert.",
+        "author": {
+          "id": "author-001",
+          "username": "travelGuru",
+          "posts": ["travel-001", "travel-002"]
+        },
+        "dateOfCreation": "2024-06-15",
+        "likes": 200,
+        "comments": [
+          {
+            "id": "comment-003",
+            "content": "Incredible journey! The desert looks magical.",
+            "author": {
+              "id": "author-004",
+              "username": "desertFox",
+              "posts": ["travel-004"]
+            },
+            "dateOfCreation": "2024-06-16"
+          }
+        ]
+      }
+    ]
+  }
+  

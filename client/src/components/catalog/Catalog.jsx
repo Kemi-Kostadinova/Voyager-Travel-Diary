@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Catalog.module.css'
+import * as request from '../../api/requester'
+import { useEffect } from 'react';
 
 export default function Catalog() {
     const items = [
@@ -38,13 +40,19 @@ export default function Catalog() {
         // Add more items as needed
     ];
 
+    useEffect(() => {
+        (async () => {
+            const travelEntries = await request.get('http://localhost:3030/jsonstore/travelEntries');
+            console.log(travelEntries);
+        })();
+    }, [])
     return (
         <div className={styles.container}>
             <div className={styles.background}>
                 <div className={styles.content}>
                     <div className={styles.grid}>
                         {items.map((item) => (
-                            <article className={styles.card}>
+                            <article key={item.id} className={styles.card}>
                                 <a href="/blog/slug" className={styles.cardLink}></a>
                                 <div className={styles.imageContainer}>
                                     <img
