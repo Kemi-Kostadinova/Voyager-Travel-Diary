@@ -1,5 +1,6 @@
-import { CheckBadgeIcon, ChatBubbleOvalLeftEllipsisIcon, StarIcon } from '@heroicons/react/20/solid'
 import Catalog from '../catalog/Catalog'
+
+import { Link } from 'react-router-dom'
 
 export default function Profile() {
     return (
@@ -45,7 +46,7 @@ export default function Profile() {
                             Follow
                         </span>
                     </button> */}
-                    <button className="py-3.5 px-5 flex rounded-full bg-[#0CA9E8] items-center shadow-sm shadow-transparent transition-all duration-200 hover:bg-[#008bb5]">
+                    <Link to="/create" className="py-3.5 px-5 flex rounded-full bg-[#0CA9E8] items-center shadow-sm shadow-transparent transition-all duration-200 hover:bg-[#008bb5]">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -65,7 +66,7 @@ export default function Profile() {
                         <span className="px-2 font-semibold text-base leading-7 text-white">
                             Add new entry
                         </span>
-                    </button>
+                    </Link>
                 </div>
             </div>
 

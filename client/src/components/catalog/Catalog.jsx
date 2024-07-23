@@ -8,7 +8,7 @@ export default function Catalog({ travelEntries }) {
             <div className={styles.background}>
                 <div className={styles.content}>
                     <div className={styles.grid}>
-                        {travelEntries.length > 0
+                        {travelEntries && travelEntries.length > 0
                             ? travelEntries.map(travelEntry => <CatalogItem key={travelEntry._id} {...travelEntry} />)
                             : <Spinner />
                         }

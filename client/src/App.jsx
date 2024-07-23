@@ -10,6 +10,7 @@ import NotFound from './components/not-found/NotFound'
 import DiscoverPage from './components/discover-page/DiscoverPage'
 import Details from './components/details/Details'
 import Profile from './components/profile/Profile'
+import CreateEntry from './components/create-entry/CreateEntry'
 
 function App() {
 
@@ -19,12 +20,13 @@ function App() {
 
 			<Routes>
 				<Route path='/' element={<HomePage />} />
+				<Route path='/log-in' element={<LogIn />} />
+				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='/about-us' element={<AboutUs />} />
 				<Route path='/discover' element={<DiscoverPage />} />
 				<Route path='/details/:travelEntryId' element={<Details />} />
+				<Route path='/create' element={<CreateEntry />} />
 				<Route path='/profile' element={<Profile />} />
-				<Route path='/log-in' element={<LogIn />} />
-				<Route path='/sign-up' element={<SignUp />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 
