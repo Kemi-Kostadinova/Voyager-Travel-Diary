@@ -1,4 +1,4 @@
-# Voyagar-Travel-Diary
+# Voyager-Travel-Diary
 Final project for ReactJS course in SoftUni. 
 
 <!-- # Voyagar-Travel-Diary
