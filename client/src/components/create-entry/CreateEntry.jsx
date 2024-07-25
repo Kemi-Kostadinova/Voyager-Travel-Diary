@@ -10,9 +10,10 @@ export default function CreateEntry() {
     const initialValues = { title: "", location: "", imageUrl: "", description: "" };
     const createHandler = async (values) => {
         try {
+            console.log(values);
             const { _id: travelEntryId } = await createEntry(values);
 
-            navigate(`/details/${travelEntryId}`)
+            navigate(`/details/${travelEntryId}`);
         } catch (err) {
             console.log(err.message);
         }

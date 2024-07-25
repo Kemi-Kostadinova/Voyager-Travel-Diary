@@ -30,9 +30,7 @@ export function useGetOneEntry(travelEntryId) {
 }
 
 export function useCreateEntry() {
-    const entryCreateHandler = (travelEntryData) => {
-        travelEntriesAPI.create(travelEntryData)
-    }
+    const entryCreateHandler = (travelEntryData) =>  travelEntriesAPI.create(travelEntryData)
 
     return entryCreateHandler
 }
