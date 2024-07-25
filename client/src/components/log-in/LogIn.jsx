@@ -7,18 +7,18 @@ import { useLogin } from "../../hooks/useAuth"
 export default function LogIn() {
     const login = useLogin();
     const navigate = useNavigate();
-    
-    const { values, onChange, onSubmit } = useForm(
-        { email: "", password: "" },
-        async ({ email, password }) => {
-            try {
-                await login(email, password);
-                navigate('/discover')
-            } catch (err) {
-                console.log(err.message);
-            }
-        } 
-    );
+
+    const initialValues = { email: "", password: "" }
+    const loginHandler = async ({ email, password }) => {
+        try {
+            await login(email, password);
+            navigate('/discover')
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    const { values, onChange, onSubmit } = useForm(initialValues, loginHandler);
 
     return (
         <>
