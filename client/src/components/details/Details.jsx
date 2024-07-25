@@ -1,20 +1,12 @@
 import CommentSection from "../comment-section/CommentSection";
 
-import { useState, useEffect } from "react";
-import * as travelEntriesAPI from "../../api/travelEntriesAPI";
 import { useParams } from "react-router-dom";
+import { useGetOneEntry } from "../../hooks/useTravelEntries";
+
 
 export default function Details() {
-    const [travelEntry, setTravelEntry] = useState({});
     const { travelEntryId } = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const result = await travelEntriesAPI.getOne(travelEntryId);
-
-            setTravelEntry(result);
-        })();
-    }, [])
+    const travelEntry = useGetOneEntry(travelEntryId)
 
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">

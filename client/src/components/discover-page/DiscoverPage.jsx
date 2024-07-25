@@ -1,20 +1,10 @@
 import styles from './DiscoverPage.module.css';
 import Catalog from "../catalog/Catalog"
 
-import { useEffect, useState } from 'react';
-import * as travelEntriesAPI from '../../api/travelEntriesAPI';
+import { useGetAllEntries } from '../../hooks/useTravelEntries';
 
 export default function DiscoverPage() {
-
-    const [travelEntries, setTravelEntries] = useState([]);
-
-    useEffect(() => {
-        (async () => {
-            const result = await travelEntriesAPI.getAll();
-            
-            setTravelEntries(result);
-        })();
-    }, [])
+    const travelEntries = useGetAllEntries()
 
     return (
         <>
@@ -27,7 +17,7 @@ export default function DiscoverPage() {
                 </div>
             </div>
 
-            <Catalog travelEntries={travelEntries}/>
+            <Catalog travelEntries={travelEntries} />
         </>
     )
 }
