@@ -4,7 +4,7 @@ import styles from './CatalogItem.module.css'
 export default function CatalogItem({
     _id,
     title,
-    image,
+    imageUrl,
     location,
     author,
     dateOfCreation,
@@ -16,7 +16,7 @@ export default function CatalogItem({
             <Link to={`/details/${_id}`} className={styles.cardLink}></Link>
             <div className={styles.imageContainer}>
                 <img
-                    src={image}
+                    src={imageUrl}
                     alt={location}
                     className={styles.cardImage}
                 />
@@ -61,12 +61,12 @@ export default function CatalogItem({
             <div className={styles.cardFooter}>
                 <div className={styles.author}>
                     <img
-                        src={author.profileImage}
-                        alt={author.username}
+                        src={"author.profileImage"}
+                        alt={"author.username"}
                         className={styles.authorImage}
                     />
                     <div className={styles.authorInfo}>
-                        <p className={styles.authorName}>{author.username}</p>
+                        <p className={styles.authorName}>{"author.username"}</p>
                         <p className={styles.publishDate}>Published on {dateOfCreation}</p>
                     </div>
                 </div>

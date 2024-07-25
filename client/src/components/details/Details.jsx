@@ -14,7 +14,7 @@ export default function Details() {
                 className="bg-cover h-64 text-center overflow-hidden"
                 style={{
                     height: 450,
-                    backgroundImage:`url(${travelEntry.image})`
+                    backgroundImage:`url(${travelEntry.imageUrl})`
                 }}
             ></div>
             <div className="max-w-2xl mx-auto">
