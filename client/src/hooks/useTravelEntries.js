@@ -28,3 +28,11 @@ export function useGetOneEntry(travelEntryId) {
 
     return travelEntry;
 }
+
+export function useCreateEntry() {
+    const entryCreateHandler = (travelEntryData) => {
+        travelEntriesAPI.create(travelEntryData)
+    }
+
+    return entryCreateHandler
+}
