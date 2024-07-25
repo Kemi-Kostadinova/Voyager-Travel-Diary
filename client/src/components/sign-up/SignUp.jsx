@@ -1,6 +1,31 @@
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
+import { useForm } from "../../hooks/useForm"
+import { useRegister } from "../../hooks/useAuth"
 
 export default function SignUp() {
+    const register = useRegister();
+    const navigate = useNavigate();
+
+    const initialValues = { email: "", username: "", password: "", rePassword: "", }
+    const registerHandler = async ({ email, username, password, rePassword }) => {
+        if (password !== rePassword) {
+            console.log("Passwords don`t match");
+            return;
+        }
+
+        try {
+            await register(email, username, password);
+
+            navigate('/discover');
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    const { values, onChange, onSubmit } = useForm(initialValues, registerHandler);
+
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-44 lg:px-8">
@@ -16,7 +41,7 @@ export default function SignUp() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form action="#" method="POST" className="space-y-6">
+                    <form onSubmit={onSubmit} className="space-y-6">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                 Email address
@@ -27,8 +52,10 @@ export default function SignUp() {
                                     name="email"
                                     type="email"
                                     required
-                                    // autoComplete="email"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    autoComplete="email"
+                                    value={values.email}
+                                    onChange={onChange}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -41,10 +68,12 @@ export default function SignUp() {
                                 <input
                                     id="username"
                                     name="username"
-                                    type="input"
+                                    type="text"
                                     required
-                                    // autoComplete="email"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    autoComplete="username"
+                                    value={values.username}
+                                    onChange={onChange}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -61,8 +90,10 @@ export default function SignUp() {
                                     name="password"
                                     type="password"
                                     required
-                                    // autoComplete="current-password"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    autoComplete="current-password"
+                                    value={values.password}
+                                    onChange={onChange}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -79,8 +110,10 @@ export default function SignUp() {
                                     name="rePassword"
                                     type="password"
                                     required
-                                    // autoComplete="current-password"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    autoComplete="current-password"
+                                    value={values.rePassword}
+                                    onChange={onChange}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -88,7 +121,7 @@ export default function SignUp() {
                         <div>
                             <button
                                 type="submit"
-                                className="flex w-full justify-center rounded-md bg-[#0CA9E8] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="flex w-full justify-center rounded-md bg-[#0CA9E8] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0CA9E8]"
                             >
                                 Sign up
                             </button>

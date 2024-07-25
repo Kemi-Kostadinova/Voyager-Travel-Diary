@@ -12,7 +12,8 @@ export default function LogIn() {
     const loginHandler = async ({ email, password }) => {
         try {
             await login(email, password);
-            navigate('/discover')
+
+            navigate('/discover');
         } catch (err) {
             console.log(err.message);
         }
