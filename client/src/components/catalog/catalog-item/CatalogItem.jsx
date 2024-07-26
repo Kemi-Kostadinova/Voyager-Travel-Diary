@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 
 import styles from './CatalogItem.module.css'
+import { formatDate } from '../../../utils/dateUtils';
 export default function CatalogItem({
     _id,
     title,
     imageUrl,
     location,
     owner,
-    dateOfCreation,
+    _createdOn,
     likes
 }) {
 
@@ -67,7 +68,7 @@ export default function CatalogItem({
                     />
                     <div className={styles.authorInfo}>
                         <p className={styles.authorName}>{owner.username}</p>
-                        <p className={styles.publishDate}>Published on {dateOfCreation}</p>
+                        <p className={styles.publishDate}>Published on {formatDate(_createdOn)}</p>
                     </div>
                 </div>
             </div>
