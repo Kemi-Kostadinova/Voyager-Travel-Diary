@@ -144,6 +144,24 @@ export default function Header() {
                                 >
                                     Discover
                                 </Link>
+                                {isAuthenticated &&
+                                    <>
+                                        <Link
+                                            to="/create"
+                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            onClick={closeMenu}
+                                        >
+                                            Add entry
+                                        </Link>
+                                        <Link
+                                            to="/profile"
+                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            onClick={closeMenu}
+                                        >
+                                            Profile
+                                        </Link>
+                                    </>
+                                }
                                 <Link
                                     to="/about-us"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
@@ -153,13 +171,22 @@ export default function Header() {
                                 </Link>
                             </div>
                             <div className="py-6">
-                                <Link
-                                    to="/log-in"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#0CA9E8] hover:bg-gray-50"
-                                    onClick={closeMenu}
-                                >
-                                    Log in
-                                </Link>
+                                {!isAuthenticated
+                                    ? <Link
+                                        to="/log-in"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#0CA9E8] hover:bg-gray-50"
+                                        onClick={closeMenu}
+                                    >
+                                        Log in
+                                    </Link>
+                                    : <Link
+                                        to="/log-out"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#0CA9E8] hover:bg-gray-50"
+                                        onClick={closeMenu}
+                                    >
+                                        Log out
+                                    </Link>
+                                }
                             </div>
                         </div>
                     </div>
