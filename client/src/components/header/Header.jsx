@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+import { AuthContext } from "../../contexts/authContext";
 
 export default function Header() {
+    const { isAuthenticated } = useContext(AuthContext)
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -60,14 +63,31 @@ export default function Header() {
                     <Link to="/discover" className="text-sm font-semibold leading-6 text-gray-900">
                         Discover
                     </Link>
+                    {isAuthenticated &&
+                        <>
+                            <Link to="/create" className="text-sm font-semibold leading-6 text-gray-900">
+                                Add entry
+                            </Link>
+
+                            <Link to="/profile" className="text-sm font-semibold leading-6 text-gray-900">
+                                Profile
+                            </Link>
+                        </>
+                    }
                     <Link to="/about-us" className="text-sm font-semibold leading-6 text-gray-900">
                         About us
                     </Link>
+
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link to="/log-in" className="text-sm font-semibold leading-6 text-gray-900" style={{ color: '#0CA9E8' }}>
-                        Log in <span aria-hidden="true">→</span>
-                    </Link>
+                    {!isAuthenticated
+                        ? <Link to="/log-in" className="text-sm font-semibold leading-6 text-gray-900" style={{ color: '#0CA9E8' }}>
+                            Log in <span aria-hidden="true">→</span>
+                        </Link>
+                        : <Link to="/log-out" className="text-sm font-semibold leading-6 text-gray-900" style={{ color: '#0CA9E8' }}>
+                            Log out <span aria-hidden="true">→</span>
+                        </Link>
+                    }
                 </div>
             </nav>
 

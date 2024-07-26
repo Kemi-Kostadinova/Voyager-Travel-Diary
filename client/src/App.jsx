@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 
+import { AuthContext } from './contexts/authContext'
+
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import HomePage from "./components/home-page/HomePage"
@@ -12,13 +14,13 @@ import DiscoverPage from './components/discover-page/DiscoverPage'
 import Details from './components/details/Details'
 import Profile from './components/profile/Profile'
 import CreateEntry from './components/create-entry/CreateEntry'
-import { AuthContext } from './contexts/authContext'
+import LogOut from './components/log-out/LogOut'
 
 function App() {
 	const [authState, setAuthState] = useState({});
 
 	const changeAuthState = (state) => {
-		localStorage.setItem("accessToken", state.accessToken);
+		// localStorage.setItem("accessToken", state.accessToken);
 		
 		setAuthState(state)
 	}
@@ -46,6 +48,7 @@ function App() {
 					<Route path='/details/:travelEntryId' element={<Details />} />
 					<Route path='/create' element={<CreateEntry />} />
 					<Route path='/profile' element={<Profile />} />
+					<Route path='/log-out' element={<LogOut />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 
