@@ -15,6 +15,20 @@ export function useGetAllEntries() {
     return travelEntries;
 }
 
+export function useGetAllEntriesWithOwner() {
+    const [travelEntries, setTravelEntries] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const result = await travelEntriesAPI.getAllWithOwner();
+
+            setTravelEntries(result);
+        })();
+    }, []);
+
+    return travelEntries;
+}
+
 export function useGetOneEntry(travelEntryId) {
     const [travelEntry, setTravelEntry] = useState({});
 

@@ -6,7 +6,7 @@ export default function CatalogItem({
     title,
     imageUrl,
     location,
-    author,
+    owner,
     dateOfCreation,
     likes
 }) {
@@ -61,12 +61,12 @@ export default function CatalogItem({
             <div className={styles.cardFooter}>
                 <div className={styles.author}>
                     <img
-                        src={"author.profileImage"}
-                        alt={"author.username"}
+                        src={owner.profileImage}
+                        alt={owner.username}
                         className={styles.authorImage}
                     />
                     <div className={styles.authorInfo}>
-                        <p className={styles.authorName}>{"author.username"}</p>
+                        <p className={styles.authorName}>{owner.username}</p>
                         <p className={styles.publishDate}>Published on {dateOfCreation}</p>
                     </div>
                 </div>
