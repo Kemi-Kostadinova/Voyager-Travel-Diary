@@ -1327,8 +1327,9 @@
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "george@abv.bg",
-                username: "George",
+                email: "jane@abv.bg",
+                username: "travelGuru",
+                profileImage: "https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
@@ -1368,6 +1369,34 @@
                 description: "Exploring the Great Barrier Reef was like stepping into an underwater paradise. The moment I submerged into the crystal-clear waters, I was greeted by a vibrant world teeming with life. The reef, stretching over 2,300 kilometers, is a living masterpiece of colorful corals, exotic fish, and diverse marine creatures. Snorkeling over the reef felt like gliding through a dream. The coral formations were an explosion of colors—bright pinks, blues, and yellows—each turn revealing a new array of sea life. Schools of shimmering fish darted around me, while majestic sea turtles and playful dolphins made occasional appearances, adding to the magic of the experience. One of the most memorable parts of my visit was exploring the reef from a boat. We anchored at various spots to dive and snorkel, each location offering a unique perspective of the reef’s beauty. I even had the chance to participate in a reef conservation workshop, learning about the ongoing efforts to protect this precious ecosystem. The Great Barrier Reef is not just a destination but a living testament to the wonders of marine life. Its beauty is both captivating and humbling, reminding me of the delicate balance of our natural world. If you have a chance to visit, it’s an experience that will not only awe you but also inspire a deeper commitment to preserving our planet’s incredible environments.",
                 _createdOn: 1721925697463,
                 _id: "fb1335a0-f706-49d5-8223-bc498275c142"
+            },
+
+            "0be85375-3bfb-4839-8320-cbb292342a67": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Visiting Hallstatt",
+                location: "Austria",
+                imageUrl: "https://ychef.files.bbci.co.uk/1280x720/p08fq4z7.jpg",
+                description: "I recently had the pleasure of visiting Austria, and my time in Hallstatt was nothing short of enchanting. This picturesque village, nestled between the serene Hallstätter See and the majestic Dachstein mountains, offered a captivating blend of natural beauty and historical charm. As I wandered through the cobblestone streets, I was struck by the quaint architecture and the stunning lakeside views. The tranquil waters of Hallstätter See mirrored the surrounding peaks, creating a postcard-perfect scene. One of the highlights was exploring the ancient salt mines that have been a cornerstone of the town's history for centuries. The peaceful ambiance of Hallstatt, coupled with its rich cultural heritage, made for a memorable experience. Whether you are a history enthusiast or simply seeking a picturesque retreat, Hallstatt in Austria offers a magical escape into a world of beauty and serenity.",
+                _createdOn: 1721988329552,
+                _id: "0be85375-3bfb-4839-8320-cbb292342a67"
+            },
+            "95f14740-2656-4e6b-b967-8a439d45edba": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Exploring the Charm of Gimmelwald",
+                location: "Switzerland",
+                imageUrl: "https://cdn.pixabay.com/photo/2022/01/26/18/41/switzerland-6969601_1280.jpg",
+                description: "My journey through Switzerland led me to the hidden gem of Gimmelwald, a village perched high in the Bernese Alps. The sheer beauty of this mountain retreat captivated me from the moment I arrived. Gimmelwald’s quaint wooden chalets, surrounded by lush green meadows and towering snow-capped peaks, create an idyllic alpine setting. Each day was an adventure, from hiking the scenic trails that offered breathtaking panoramic views to relaxing in the cozy local inns that exude traditional Swiss warmth. The serenity of Gimmelwald, coupled with its charming atmosphere, makes it a perfect destination for those seeking both adventure and tranquility. Whether you’re hiking through alpine meadows or simply taking in the majestic mountain views, Gimmelwald promises an unforgettable Swiss experience.",
+                _createdOn: 1721988525174,
+                _id: "95f14740-2656-4e6b-b967-8a439d45edba"
+            },
+            "85e5f37f-01d7-4818-9d94-9f057c50b571": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Discovering the Blue Magic of Chefchaouen",
+                location: "Morocco",
+                imageUrl: "https://www.carwiz.rent/data/public/2022-12/cw_chefchaouen4_1639c4a1400fac.jpg",
+                description: "My adventure in Morocco brought me to the enchanting town of Chefchaouen, renowned for its vibrant blue-washed buildings and stunning mountain backdrop. Wandering through the narrow, winding streets of Chefchaouen felt like stepping into a dreamscape. The rich blue hues of the buildings created a surreal and calming atmosphere, complemented by the surrounding rugged landscapes. Each corner of the town revealed charming alleys and bustling souks filled with local crafts and spices. One of the highlights of my visit was exploring the medina, where the blend of Moroccan culture and the unique blue architecture made for an unforgettable experience. Chefchaouen’s serene ambiance and rich cultural heritage offer a magical retreat for anyone looking to immerse themselves in the beauty and mystique of Morocco.",
+                _createdOn: 1721988560435,
+                _id: "85e5f37f-01d7-4818-9d94-9f057c50b571"
             }
         }
         ,

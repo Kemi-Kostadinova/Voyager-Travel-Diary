@@ -21,8 +21,8 @@ export function useLogin() {
 export function useRegister() {
     const { changeAuthState } = useContext(AuthContext);
 
-    const registerHandler = async (email, username, password) => {
-        const { password: _password, ...authData } = await register(email, username, password);
+    const registerHandler = async (email, username, profileImage, password) => {
+        const { password: _password, ...authData } = await register(email, username, profileImage, password);
 
         localStorage.setItem("accessToken", authData.accessToken);
         changeAuthState(authData);

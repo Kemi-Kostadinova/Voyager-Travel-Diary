@@ -8,15 +8,15 @@ export default function SignUp() {
     const register = useRegister();
     const navigate = useNavigate();
 
-    const initialValues = { email: "", username: "", password: "", rePassword: "", }
-    const registerHandler = async ({ email, username, password, rePassword }) => {
+    const initialValues = { email: "", username: "", profileImage: "", password: "", rePassword: "", }
+    const registerHandler = async ({ email, username, profileImage, password, rePassword }) => {
         if (password !== rePassword) {
             console.log("Passwords don`t match");
             return;
         }
 
         try {
-            await register(email, username, password);
+            await register(email, username, profileImage, password);
 
             navigate('/discover');
         } catch (err) {
@@ -72,6 +72,24 @@ export default function SignUp() {
                                     required
                                     autoComplete="username"
                                     value={values.username}
+                                    onChange={onChange}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="profileImage" className="block text-sm font-medium leading-6 text-gray-900">
+                                Profile image
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="profileImage"
+                                    name="profileImage"
+                                    type="text"
+                                    required
+                                    autoComplete="profileImage"
+                                    value={values.profileImage}
                                     onChange={onChange}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#0CA9E8] sm:text-sm sm:leading-6"
                                 />

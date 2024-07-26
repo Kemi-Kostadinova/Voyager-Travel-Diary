@@ -12,8 +12,7 @@ export const getAll = async() => {
 
 export const getAllWithOwner = async() => {
     const result = await request.get(`${BASE_URL}/?load=owner%3D_ownerId%3Ausers`);
-    console.log(result, "Owner Api");
-
+    
     const travelEntries = Object.values(result);
 
     return travelEntries;
