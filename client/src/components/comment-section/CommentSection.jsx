@@ -9,7 +9,7 @@ import { useCreateComment } from "../../hooks/useComments";
 export default function CommentSection({ comments, travelEntryId }) {
 
     const createComment = useCreateComment()
-    const { profileImage } = useContext(AuthContext);
+    const { profileImage, isAuthenticated } = useContext(AuthContext);
 
     const initialValues = { comment: "" }
     const commentSubmitHandler = async ({comment}) => {
@@ -30,7 +30,7 @@ export default function CommentSection({ comments, travelEntryId }) {
                         Comments
                     </h2>
 
-                    <form className="w-full flex-col justify-start items-start gap-5 flex" onSubmit={onSubmit}>
+                    {isAuthenticated && <form className="w-full flex-col justify-start items-start gap-5 flex" onSubmit={onSubmit}>
                         <div className="w-full rounded-3xl justify-start items-start gap-3.5 inline-flex">
                             <img
                                 className="w-12 h-12 rounded-full object-cover"
@@ -53,7 +53,7 @@ export default function CommentSection({ comments, travelEntryId }) {
                                 Post your comment
                             </span>
                         </button>
-                    </form>
+                    </form>}
                     {/* 
                     <div className="w-full flex-col justify-start items-start gap-8 flex">
                         {comments?.length > 0
