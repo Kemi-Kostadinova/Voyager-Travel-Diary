@@ -1,6 +1,6 @@
 export default function UserComment({
     _id,
-    content,
+    text,
     author,
     dateOfCreation
 }) {
@@ -27,7 +27,7 @@ export default function UserComment({
                     </div>
                 </div>
                 <p className="text-gray-800 text-sm font-normal leading-snug">
-                    {content}
+                    {text}
                 </p>
             </div>
         </div>

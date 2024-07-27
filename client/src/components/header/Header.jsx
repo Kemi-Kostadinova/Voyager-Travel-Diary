@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export default function Header() {
-    const { isAuthenticated } = useContext(AuthContext)
+    const { isAuthenticated } = useContext(AuthContext);
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 

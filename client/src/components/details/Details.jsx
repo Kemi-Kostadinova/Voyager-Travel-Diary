@@ -83,7 +83,7 @@ export default function Details() {
                     </button>
                 </div>
             </div>
-            <CommentSection comments={travelEntry.comments} travelEntryId={travelEntryId}/>
+            <CommentSection travelEntryId={travelEntryId}/>
         </div>
 
     )

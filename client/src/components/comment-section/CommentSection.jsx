@@ -4,17 +4,19 @@ import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
 
 import UserComment from "./user-comment/UserComment";
-import { useCreateComment } from "../../hooks/useComments";
+import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 
-export default function CommentSection({ comments, travelEntryId }) {
-
+export default function CommentSection({ travelEntryId }) {
+    const [comments, setComments] = useGetAllComments(travelEntryId);
     const createComment = useCreateComment()
     const { profileImage, isAuthenticated } = useContext(AuthContext);
 
     const initialValues = { comment: "" }
     const commentSubmitHandler = async ({comment}) => {
         try {
-            await createComment(travelEntryId, comment);
+            const newComment = await createComment(travelEntryId, comment);
+
+            setComments((oldComments) => [...oldComments, newComment]);
         } catch (err) {
             console.log(err.message);
         }
@@ -54,13 +56,13 @@ export default function CommentSection({ comments, travelEntryId }) {
                             </span>
                         </button>
                     </form>}
-                    {/* 
+                    
                     <div className="w-full flex-col justify-start items-start gap-8 flex">
                         {comments?.length > 0
                             ? comments.map(comment => <UserComment key={comment._id} {...comment} />)
                             : <p className="text-gray-900 text-2xl font-semibold font-manrope leading-normal">No comments yet</p>
                         }
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </section>
