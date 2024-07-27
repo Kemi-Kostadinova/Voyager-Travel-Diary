@@ -1,12 +1,12 @@
-import CommentSection from "../comment-section/CommentSection";
-
 import { useParams } from "react-router-dom";
+
 import { useGetOneEntry } from "../../hooks/useTravelEntries";
 
+import CommentSection from "../comment-section/CommentSection";
 
 export default function Details() {
     const { travelEntryId } = useParams();
-    const travelEntry = useGetOneEntry(travelEntryId)
+    const travelEntry = useGetOneEntry(travelEntryId);
 
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
@@ -14,7 +14,7 @@ export default function Details() {
                 className="bg-cover h-64 text-center overflow-hidden"
                 style={{
                     height: 450,
-                    backgroundImage:`url(${travelEntry.imageUrl})`
+                    backgroundImage: `url(${travelEntry.imageUrl})`
                 }}
             ></div>
             <div className="max-w-2xl mx-auto">
@@ -83,7 +83,7 @@ export default function Details() {
                     </button>
                 </div>
             </div>
-            <CommentSection comments={travelEntry.comments} />
+            <CommentSection comments={travelEntry.comments} travelEntryId={travelEntryId}/>
         </div>
 
     )

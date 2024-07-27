@@ -20,4 +20,4 @@ export const getAllWithOwner = async() => {
 
 export const getOne = (travelEntryId) => request.get(`${BASE_URL}/${travelEntryId}`);
 
-export const create = (travelEntryData) => request.post(`${BASE_URL}`, travelEntryData);
+export const create = (travelEntryData) => request.post(BASE_URL, travelEntryData);
