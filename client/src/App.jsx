@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 
-import { AuthContext } from './contexts/authContext'
+import { AuthContextProvider } from './contexts/AuthContext'
 
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
@@ -17,25 +16,9 @@ import CreateEntry from './components/create-entry/CreateEntry'
 import LogOut from './components/log-out/LogOut'
 
 function App() {
-	const [authState, setAuthState] = useState({});
-
-	const changeAuthState = (state) => {
-		// localStorage.setItem("accessToken", state.accessToken);
-		
-		setAuthState(state)
-	}
-
-	const contextData = {
-		userId: authState._id,
-		email: authState.email,
-		accessToken: authState.accessToken,
-		isAuthenticated: !!authState.email,
-		changeAuthState
-	}
 
 	return (
-
-		<AuthContext.Provider value={contextData}>
+		<AuthContextProvider>
 			<>
 				<Header />
 
@@ -54,7 +37,7 @@ function App() {
 
 				<Footer />
 			</>
-		</AuthContext.Provider>
+		</AuthContextProvider>
 	)
 }
 
