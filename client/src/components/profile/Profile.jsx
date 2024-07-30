@@ -70,7 +70,7 @@ export default function Profile() {
                 </div>
             </div>
 
-            <Catalog />
+            {/* <Catalog /> */}
         </section>
     )
 }

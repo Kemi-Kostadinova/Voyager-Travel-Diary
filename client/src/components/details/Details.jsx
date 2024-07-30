@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { useGetOneEntry } from "../../hooks/useTravelEntries";
 
 import CommentSection from "../comment-section/CommentSection";
@@ -7,6 +9,9 @@ import CommentSection from "../comment-section/CommentSection";
 export default function Details() {
     const { travelEntryId } = useParams();
     const travelEntry = useGetOneEntry(travelEntryId);
+    const { userId } = useContext(AuthContext);
+
+    const isOwner = userId === travelEntry._ownerId;
 
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
@@ -70,7 +75,7 @@ export default function Details() {
                         </p>
                     </div>
                 </div>
-                <div className="w-full justify-end items-start gap-6 inline-flex">
+                {isOwner && <div className="w-full justify-end items-start gap-6 inline-flex">
                     <button className="sm:w-fit w-full px-5 py-2.5 rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] hover:bg-gray-200 hover:border-transparent transition-all duration-200 ease-in-out border border-gray-200 justify-center items-center flex">
                         <span className="px-2 text-gray-900 text-base font-semibold leading-relaxed">
                             Delete
@@ -81,7 +86,7 @@ export default function Details() {
                             Edit
                         </span>
                     </button>
-                </div>
+                </div>}
             </div>
             <CommentSection travelEntryId={travelEntryId}/>
         </div>
