@@ -1,8 +1,10 @@
+import { formatDate } from '../../../utils/dateUtils';
+
 export default function UserComment({
     _id,
     text,
     author,
-    dateOfCreation
+    _createdOn
 }) {
     return (
         <div className="w-full lg:p-8 p-5 bg-white rounded-3xl border border-gray-200 flex-col justify-start items-start flex">
@@ -11,17 +13,17 @@ export default function UserComment({
                     <div className="justify-start items-center gap-2.5 flex">
                         <div className="w-10 h-10 bg-stone-300 rounded-full justify-start items-start gap-2.5 flex">
                             <img
-                                className=""
-                                src="https://pagedone.io/asset/uploads/1710225753.png"
-                                alt="John smith image"
+                                 className="w-10 h-10 rounded-full object-cover"
+                                src={author.profileImage}
+                                alt={author.username}
                             />
                         </div>
                         <div className="flex-col justify-start items-start gap-1 inline-flex">
                             <h5 className="text-gray-900 text-sm font-semibold leading-snug">
-                                {author && author.username}
+                                {author.username}
                             </h5>
                             <h6 className="text-gray-500 text-xs font-normal leading-5">
-                                {dateOfCreation}
+                                {formatDate(_createdOn)}
                             </h6>
                         </div>
                     </div>
