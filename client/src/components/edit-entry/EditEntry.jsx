@@ -1,33 +1,28 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm"
-import { useCreateEntry } from "../../hooks/useTravelEntries";
+import { useGetOneEntry } from "../../hooks/useTravelEntries";
 
 const initialValues = { title: "", location: "", imageUrl: "", description: "" };
 
-export default function CreateEntry() {
-    const createEntry = useCreateEntry();
+export default function EditEntry() {
+    const { travelEntryId } = useParams();
+    const travelEntry = useGetOneEntry(travelEntryId);
     const navigate = useNavigate()
 
-    const createHandler = async (values) => {
-        try {
-            console.log(values);
-            const { _id: travelEntryId } = await createEntry(values);
 
-            navigate(`/details/${travelEntryId}`);
-        } catch (err) {
-            console.log(err.message);
-        }
+    const editHandler = (values) => {
+        console.log(values, 'editHandler');
     }
 
-    const { values, onChange, onSubmit } = useForm(initialValues, createHandler);
+    const { values, onChange, onSubmit } = useForm(Object.assign(initialValues, travelEntry), editHandler);
 
     return (
         <section className="py-28 relative">
             <div className="w-full max-w-3xl px-4 md:px-5 lg:px-5 mx-auto">
                 <div className="w-full flex-col justify-center items-center gap-4 inline-flex">
                     <h2 className="text-center text-gray-900 text-4xl font-bold font-manrope leading-normal">
-                        Add new entry
+                        Edit entry
                     </h2>
                 </div>
 
@@ -164,7 +159,7 @@ export default function CreateEntry() {
                     </div>
                     <button className="mx-auto sm:w-fit w-full px-7 py-3 bg-[#0CA9E8] hover:bg-[#008bb5] transition-all duration-300 ease-in-out rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
                         <span className="px-2 text-center text-white text-lg font-semibold leading-8">
-                            Create
+                            Edit
                         </span>
                     </button>
                 </form>

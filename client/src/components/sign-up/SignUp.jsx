@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm"
 import { useRegister } from "../../hooks/useAuth"
 
+const initialValues = { email: "", username: "", profileImage: "", password: "", rePassword: "", };
+
 export default function SignUp() {
     const register = useRegister();
     const navigate = useNavigate();
 
-    const initialValues = { email: "", username: "", profileImage: "", password: "", rePassword: "", }
     const registerHandler = async ({ email, username, profileImage, password, rePassword }) => {
         if (password !== rePassword) {
             console.log("Passwords don`t match");

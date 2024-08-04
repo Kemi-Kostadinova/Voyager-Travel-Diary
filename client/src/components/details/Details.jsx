@@ -85,11 +85,11 @@ export default function Details() {
                             Delete
                         </span>
                     </button>
-                    <button className="sm:w-fit w-full px-5 py-2.5 bg-[#0CA9E8] hover:bg-[#008bb5] transition-all duration-200 ease-in-out rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
+                    <Link to={`/edit/${travelEntryId}`} className="sm:w-fit w-full px-5 py-2.5 bg-[#0CA9E8] hover:bg-[#008bb5] transition-all duration-200 ease-in-out rounded-xl shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex">
                         <span className="px-2 py-px text-white text-base font-semibold leading-relaxed">
                             Edit
                         </span>
-                    </button>
+                    </Link>
                 </div>}
             </div>
             <CommentSection travelEntryId={travelEntryId} />

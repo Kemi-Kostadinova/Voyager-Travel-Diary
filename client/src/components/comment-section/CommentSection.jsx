@@ -6,12 +6,13 @@ import { AuthContext } from "../../contexts/AuthContext";
 import UserComment from "./user-comment/UserComment";
 import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 
+const initialValues = { comment: "" };
+
 export default function CommentSection({ travelEntryId }) {
     const [comments, setComments] = useGetAllComments(travelEntryId);
     const createComment = useCreateComment()
     const { profileImage, isAuthenticated } = useContext(AuthContext);
 
-    const initialValues = { comment: "" }
     const commentSubmitHandler = async ({comment}) => {
         try {
             const newComment = await createComment(travelEntryId, comment);

@@ -14,6 +14,7 @@ import Details from './components/details/Details'
 import Profile from './components/profile/Profile'
 import CreateEntry from './components/create-entry/CreateEntry'
 import LogOut from './components/log-out/LogOut'
+import EditEntry from './components/edit-entry/EditEntry'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
 					<Route path='/about-us' element={<AboutUs />} />
 					<Route path='/discover' element={<DiscoverPage />} />
 					<Route path='/details/:travelEntryId' element={<Details />} />
+					<Route path='/edit/:travelEntryId' element={<EditEntry />} />
 					<Route path='/create' element={<CreateEntry />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/log-out' element={<LogOut />} />
