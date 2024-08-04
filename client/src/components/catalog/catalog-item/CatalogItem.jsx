@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './CatalogItem.module.css'
 import { formatDate } from '../../../utils/dateUtils';
+
 export default function CatalogItem({
     _id,
     title,

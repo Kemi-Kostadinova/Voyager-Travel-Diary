@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import * as travelEntriesAPI from "../api/travelEntriesAPI";
 
 export function useGetAllEntries() {
@@ -44,7 +45,7 @@ export function useGetOneEntry(travelEntryId) {
 }
 
 export function useCreateEntry() {
-    const entryCreateHandler = (travelEntryData) =>  travelEntriesAPI.create(travelEntryData)
+    const entryCreateHandler = (travelEntryData) => travelEntriesAPI.create(travelEntryData);
 
     return entryCreateHandler
 }
