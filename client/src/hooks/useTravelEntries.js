@@ -49,3 +49,9 @@ export function useCreateEntry() {
 
     return entryCreateHandler
 }
+
+export function useEditEntry() {
+    const entryEditHandler = (travelEntryId, travelEntryData) => travelEntriesAPI.update(travelEntryId, travelEntryData);
+
+    return entryEditHandler
+}

@@ -22,4 +22,6 @@ export const getOne = (travelEntryId) => request.get(`${BASE_URL}/${travelEntryI
 
 export const create = (travelEntryData) => request.post(BASE_URL, travelEntryData);
 
+export const update = (travelEntryId, travelEntryData) => request.put(`${BASE_URL}/${travelEntryId}`, travelEntryData);
+
 export const del = (travelEntryId) => request.del(`${BASE_URL}/${travelEntryId}`);

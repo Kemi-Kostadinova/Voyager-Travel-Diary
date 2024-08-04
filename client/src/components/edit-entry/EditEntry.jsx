@@ -1,18 +1,25 @@
 import { useNavigate, useParams } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm"
-import { useGetOneEntry } from "../../hooks/useTravelEntries";
+import { useEditEntry, useGetOneEntry } from "../../hooks/useTravelEntries";
 
 const initialValues = { title: "", location: "", imageUrl: "", description: "" };
 
 export default function EditEntry() {
     const { travelEntryId } = useParams();
     const travelEntry = useGetOneEntry(travelEntryId);
+    const editEntry = useEditEntry();
     const navigate = useNavigate()
 
 
-    const editHandler = (values) => {
-        console.log(values, 'editHandler');
+    const editHandler = async (values) => {
+        try {
+            await editEntry(travelEntryId, values);
+
+            navigate(`/details/${travelEntryId}`);
+        } catch (err) {
+            console.log(err.message);
+        }
     }
 
     const { values, onChange, onSubmit } = useForm(Object.assign(initialValues, travelEntry), editHandler);

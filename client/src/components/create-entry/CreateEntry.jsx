@@ -11,7 +11,6 @@ export default function CreateEntry() {
 
     const createHandler = async (values) => {
         try {
-            console.log(values);
             const { _id: travelEntryId } = await createEntry(values);
 
             navigate(`/details/${travelEntryId}`);
