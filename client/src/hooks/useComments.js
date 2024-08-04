@@ -7,7 +7,7 @@ export function useCreateComment() {
     return commentCreateHandler
 }
 
-export function useGetAllComments(travelEntryId) {
+export function useGetAllComments(travelEntryId, commentChangeTrigger) {
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export function useGetAllComments(travelEntryId) {
 
             setComments(result);
         })();
-    }, [travelEntryId]);
+    }, [travelEntryId, commentChangeTrigger]);
 
     return [comments, setComments];
 }

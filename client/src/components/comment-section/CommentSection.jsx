@@ -9,15 +9,19 @@ import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 const initialValues = { comment: "" };
 
 export default function CommentSection({ travelEntryId }) {
-    const [comments, setComments] = useGetAllComments(travelEntryId);
-    const createComment = useCreateComment()
     const { profileImage, isAuthenticated } = useContext(AuthContext);
+    
+    const [commentChangeTrigger, setCommentChangeTrigger] = useState(0);
+    const [comments, setComments] = useGetAllComments(travelEntryId, commentChangeTrigger);
+    const createComment = useCreateComment()
 
     const commentSubmitHandler = async ({comment}) => {
         try {
             const newComment = await createComment(travelEntryId, comment);
 
             setComments((oldComments) => [...oldComments, newComment]);
+            setCommentChangeTrigger((prev) => prev + 1);
+            
         } catch (err) {
             console.log(err.message);
         }
