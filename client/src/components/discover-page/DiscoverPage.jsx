@@ -1,12 +1,10 @@
 import styles from './DiscoverPage.module.css';
 import Catalog from "../catalog/Catalog"
 
-import { useGetAllEntries, useGetAllEntriesWithOwner } from '../../hooks/useTravelEntries';
+import { useGetAllEntriesWithOwner } from '../../hooks/useTravelEntries';
 
 export default function DiscoverPage() {
-    // const travelEntries = useGetAllEntries();
     const travelEntriesWithOwner = useGetAllEntriesWithOwner();
-    // console.log(travelEntriesWithOwner, "Owner Discover");
 
     return (
         <>

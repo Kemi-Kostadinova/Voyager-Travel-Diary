@@ -1,4 +1,4 @@
-import * as request from './requester'
+import * as request from './requester';
 
 const BASE_URL = 'http://localhost:3030/data/travelEntries';
 
@@ -11,7 +11,12 @@ export const getAll = async() => {
 };
 
 export const getAllWithOwner = async() => {
-    const result = await request.get(`${BASE_URL}/?load=owner%3D_ownerId%3Ausers`);
+    const params = new URLSearchParams({
+        load: `owner=_ownerId:users`
+    });
+
+    // const result = await request.get(`${BASE_URL}/?load=owner%3D_ownerId%3Ausers`);
+    const result = await request.get(`${BASE_URL}?${params}`);
     
     const travelEntries = Object.values(result);
 
