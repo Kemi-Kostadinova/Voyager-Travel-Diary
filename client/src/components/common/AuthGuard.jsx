@@ -9,5 +9,5 @@ export default function AuthGuard() {
 
     return isAuthenticated
         ? <Outlet />
-        : <Navigate to="/login" />;
+        : <Navigate to="/log-in" />;
 }

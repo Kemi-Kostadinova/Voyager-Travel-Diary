@@ -15,6 +15,8 @@ import Profile from './components/profile/Profile'
 import CreateEntry from './components/create-entry/CreateEntry'
 import LogOut from './components/log-out/LogOut'
 import EditEntry from './components/edit-entry/EditEntry'
+import AuthGuard from './components/common/AuthGuard'
+import UnauthorizedGuard from './contexts/UnauthorizedGuard'
 
 function App() {
 
@@ -25,15 +27,22 @@ function App() {
 
 				<Routes>
 					<Route path='/' element={<HomePage />} />
-					<Route path='/log-in' element={<LogIn />} />
-					<Route path='/sign-up' element={<SignUp />} />
-					<Route path='/about-us' element={<AboutUs />} />
 					<Route path='/discover' element={<DiscoverPage />} />
+					<Route path='/about-us' element={<AboutUs />} />
 					<Route path='/details/:travelEntryId' element={<Details />} />
-					<Route path='/edit/:travelEntryId' element={<EditEntry />} />
-					<Route path='/create' element={<CreateEntry />} />
-					<Route path='/profile' element={<Profile />} />
-					<Route path='/log-out' element={<LogOut />} />
+
+					<Route element={<UnauthorizedGuard />}>
+						<Route path='/log-in' element={<LogIn />} />
+						<Route path='/sign-up' element={<SignUp />} />
+					</Route>
+
+					<Route element={<AuthGuard />}>
+						<Route path='/create' element={<CreateEntry />} />
+						<Route path='/edit/:travelEntryId' element={<EditEntry />} />
+						<Route path='/profile' element={<Profile />} />
+						<Route path='/log-out' element={<LogOut />} />
+					</Route>
+
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 
