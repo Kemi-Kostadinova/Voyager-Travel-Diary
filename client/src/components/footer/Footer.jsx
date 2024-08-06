@@ -13,53 +13,9 @@ export default function Footer() {
                             />
                             </span>
                             <div className="flex flex-col items-center gap-6 mb-8">
-                                {/* <div className="flex flex-wrap items-center justify-center gap-5 lg:gap-12 gap-y-3 lg:flex-nowrap text-dark-grey-900">
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        About
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Features
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Blog
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Resources
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Partners
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Help
-                                    </a>
-                                    <a
-                                        href="javascript:void(0)"
-                                        className="text-gray-600 hover:text-gray-900"
-                                    >
-                                        Terms
-                                    </a>
-                                </div> */}
                                 <div className="flex items-center gap-8">
                                     <a
-                                        href="javascript:void(0)"
+                                        href="#"
                                         className="text-grey-700 hover:text-grey-900"
                                     >
                                         <svg
@@ -95,7 +51,7 @@ export default function Footer() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="javascript:void(0)"
+                                        href="#"
                                         className="text-grey-700 hover:text-grey-900"
                                     >
                                         <svg
@@ -131,7 +87,7 @@ export default function Footer() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="javascript:void(0)"
+                                        href="#"
                                         className="text-grey-700 hover:text-grey-900"
                                     >
                                         <svg
@@ -148,7 +104,7 @@ export default function Footer() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="javascript:void(0)"
+                                        href="#"
                                         className="text-grey-700 hover:text-grey-900"
                                     >
                                         <svg
@@ -165,7 +121,7 @@ export default function Footer() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="javascript:void(0)"
+                                        href="#"
                                         className="text-grey-700 hover:text-grey-900"
                                     >
                                         <svg
@@ -211,29 +167,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            {/* <div className="flex flex-wrap -mx-3 my-5">
-                <div className="w-full max-w-full sm:w-3/4 mx-auto text-center">
-                    <p className="text-sm text-slate-500 py-1">
-                        Tailwind CSS Component from{" "}
-                        <a
-                            href="https://www.loopple.com/theme/motion-landing-library?ref=tailwindcomponents"
-                            className="text-slate-700 hover:text-slate-900"
-                            target="_blank"
-                        >
-                            Motion Landing Library
-                        </a>{" "}
-                        by{" "}
-                        <a
-                            href="https://www.loopple.com"
-                            className="text-slate-700 hover:text-slate-900"
-                            target="_blank"
-                        >
-                            Loopple Builder
-                        </a>
-                        .
-                    </p>
-                </div>
-            </div> */}
         </div>
 
     )
