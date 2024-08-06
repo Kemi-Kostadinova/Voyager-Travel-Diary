@@ -1,16 +1,16 @@
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
-import * as travelEntriesAPI from "../../api/travelEntriesAPI";
+import { useDeleteEntry } from '../../hooks/useTravelEntries';
 
 export default function DeleteEntry({ travelEntryId, onClose }) {
     const navigate = useNavigate();
+    const deleteEntry = useDeleteEntry();
 
     const deleteEntryHandler = async () => {
         try {
-            await travelEntriesAPI.del(travelEntryId);
+            await deleteEntry(travelEntryId);
 
             navigate('/discover');
         } catch (err) {

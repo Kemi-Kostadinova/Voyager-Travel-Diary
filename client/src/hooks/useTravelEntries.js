@@ -55,3 +55,9 @@ export function useEditEntry() {
 
     return entryEditHandler
 }
+
+export function useDeleteEntry() {
+    const entryDeleteHandler = (travelEntryId) => travelEntriesAPI.del(travelEntryId);
+
+    return entryDeleteHandler
+}
