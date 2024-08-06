@@ -2,15 +2,14 @@ import * as request from './requester';
 
 const BASE_URL = 'http://localhost:3030/data/travelEntries';
 
-export const getAll = async() => {
-    const result = await request.get(BASE_URL);
+export const getAllWithOwner = async () => {
+    const params = new URLSearchParams({
+        load: `owner=_ownerId:users`
+    });
 
-    const travelEntries = Object.values(result);
-
-    return travelEntries;
+    return request.get(`${BASE_URL}?${params.toString()}`);
 };
 
-export const getAllWithOwner = async() => {
 export const getLatest = async () => {
     const params = new URLSearchParams({
         sortBy: '_createdOn desc',
@@ -22,7 +21,14 @@ export const getLatest = async () => {
     return request.get(`${BASE_URL}?${queryString}`);
 };
 
-export const getOne = (travelEntryId) => request.get(`${BASE_URL}/${travelEntryId}`);
+
+export const getOne = async (travelEntryId) => {
+    const params = new URLSearchParams({
+        load: `owner=_ownerId:users`
+    });
+
+    return request.get(`${BASE_URL}/${travelEntryId}?${params.toString()}`);
+};
 
 export const create = (travelEntryData) => request.post(BASE_URL, travelEntryData);
 

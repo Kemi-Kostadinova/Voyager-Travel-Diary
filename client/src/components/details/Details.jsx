@@ -41,7 +41,7 @@ export default function Details() {
                                         href="#"
                                         className="text-[#0CA9E8] font-medium hover:text-[#008bb5] transition duration-200 ease-in-out"
                                     >
-                                        {travelEntry.author && travelEntry.author.username}
+                                        {travelEntry.owner && travelEntry.owner.username}
                                     </a>
                                 </p>
                             </div>
