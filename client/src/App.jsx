@@ -16,7 +16,8 @@ import CreateEntry from './components/create-entry/CreateEntry'
 import LogOut from './components/log-out/LogOut'
 import EditEntry from './components/edit-entry/EditEntry'
 import AuthGuard from './components/common/AuthGuard'
-import UnauthorizedGuard from './contexts/UnauthorizedGuard'
+// import UnauthorizedGuard from './contexts/UnauthorizedGuard'
+import UnauthorizedGuard from './components/common/UnauthorizedGuard'
 
 function App() {
 
