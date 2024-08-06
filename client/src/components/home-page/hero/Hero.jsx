@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react";
 
+
+import { AuthContext } from "../../../contexts/AuthContext";
 
 export default function Hero() {
+    const { isAuthenticated } = useContext(AuthContext);
+
     return (
         <div className="relative isolate px-6 pt-14 lg:px-8">
             <div
@@ -27,13 +32,14 @@ export default function Hero() {
                         Discover hidden gems, share your adventures, and connect with fellow travelers. Start exploring today!
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <Link
-                            to="/sign-up"
-                            className="rounded-md bg-[#0CA9E8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                        {!isAuthenticated &&
+                            <Link
+                                to="/sign-up"
+                                className="rounded-md bg-[#0CA9E8] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#008bb5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 
-                        >
-                            Get started
-                        </Link>
+                            >
+                                Get started
+                            </Link>}
                         <Link to="/discover" className="text-sm font-semibold leading-6 text-gray-900 hover:text-[#0CA9E8]">
                             Explore destinations <span aria-hidden="true">→</span>
                         </Link>
