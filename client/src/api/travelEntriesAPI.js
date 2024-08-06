@@ -11,16 +11,15 @@ export const getAll = async() => {
 };
 
 export const getAllWithOwner = async() => {
+export const getLatest = async () => {
     const params = new URLSearchParams({
-        load: `owner=_ownerId:users`
+        sortBy: '_createdOn desc',
+        pageSize: 3
     });
 
-    // const result = await request.get(`${BASE_URL}/?load=owner%3D_ownerId%3Ausers`);
-    const result = await request.get(`${BASE_URL}?${params}`);
-    
-    const travelEntries = Object.values(result);
+    const queryString = params.toString().replace(/\+/g, '%20');
 
-    return travelEntries;
+    return request.get(`${BASE_URL}?${queryString}`);
 };
 
 export const getOne = (travelEntryId) => request.get(`${BASE_URL}/${travelEntryId}`);

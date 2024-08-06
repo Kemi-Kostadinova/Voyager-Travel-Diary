@@ -2,20 +2,6 @@ import { useEffect, useState } from "react";
 
 import * as travelEntriesAPI from "../api/travelEntriesAPI";
 
-export function useGetAllEntries() {
-    const [travelEntries, setTravelEntries] = useState([]);
-
-    useEffect(() => {
-        (async () => {
-            const result = await travelEntriesAPI.getAll();
-
-            setTravelEntries(result);
-        })();
-    }, []);
-
-    return travelEntries;
-}
-
 export function useGetAllEntriesWithOwner() {
     const [travelEntries, setTravelEntries] = useState([]);
 
@@ -42,6 +28,20 @@ export function useGetOneEntry(travelEntryId) {
     }, [travelEntryId]);
 
     return travelEntry;
+}
+
+export function useGetLatestEntries() {
+    const [travelEntries, setTravelEntries] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const result = await travelEntriesAPI.getLatest();
+
+            setTravelEntries(result);
+        })();
+    }, []);
+
+    return travelEntries;
 }
 
 export function useCreateEntry() {
