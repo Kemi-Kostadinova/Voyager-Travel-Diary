@@ -18,7 +18,7 @@ export default function Details() {
 
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
-            {showDelete && <DeleteEntry travelEntryId={travelEntryId}/>}
+            {showDelete && <DeleteEntry onClose={() => setshowDelete(false)} travelEntryId={travelEntryId}/>}
             <div
                 className="bg-cover h-64 text-center overflow-hidden"
                 style={{

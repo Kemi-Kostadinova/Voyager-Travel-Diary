@@ -5,8 +5,7 @@ import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 import * as travelEntriesAPI from "../../api/travelEntriesAPI";
 
-export default function DeleteEntry({ travelEntryId }) {
-    const [open, setOpen] = useState(true);
+export default function DeleteEntry({ travelEntryId, onClose }) {
     const navigate = useNavigate();
 
     const deleteEntryHandler = async () => {
@@ -20,7 +19,7 @@ export default function DeleteEntry({ travelEntryId }) {
     }
 
     return (
-        <Dialog open={open} onClose={setOpen} className="relative z-10">
+        <Dialog open={true} onClose={onClose} className="relative z-10">
             <DialogBackdrop
                 transition
                 className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in"
@@ -61,7 +60,7 @@ export default function DeleteEntry({ travelEntryId }) {
                             <button
                                 type="button"
                                 data-autofocus
-                                onClick={() => setOpen(false)}
+                                onClick={onClose}
                                 className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                             >
                                 Cancel
