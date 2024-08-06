@@ -48,8 +48,7 @@ export default function OurStory() {
                     </div>
                     <img
                         alt="Product screenshot"
-                        src="https://img.freepik.com/free-photo/back-view-people-looking-map-find-new-destination_23-2148699857.jpg?t=st=1721380353~exp=1721383953~hmac=9f43577cfd827136d00046be4df9b95c258aeed90a1c0629e0b38268d977d9e2&w=996"
-                        width={2432}
+                        src="https://img.freepik.com/free-photo/back-view-people-looking-map-find-new-destination_23-2148699857.jpg?t=st=1722941543~exp=1722945143~hmac=6d5a3a148daa58bb1d8acb98e4e405c577400ad4555444141d05f669001701b5&w=1380"
                         height={1442}
                         className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[59rem] md:-ml-4 lg:-ml-0"
                     />
