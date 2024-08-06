@@ -1397,6 +1397,15 @@
                 description: "My adventure in Morocco brought me to the enchanting town of Chefchaouen, renowned for its vibrant blue-washed buildings and stunning mountain backdrop. Wandering through the narrow, winding streets of Chefchaouen felt like stepping into a dreamscape. The rich blue hues of the buildings created a surreal and calming atmosphere, complemented by the surrounding rugged landscapes. Each corner of the town revealed charming alleys and bustling souks filled with local crafts and spices. One of the highlights of my visit was exploring the medina, where the blend of Moroccan culture and the unique blue architecture made for an unforgettable experience. Chefchaouen’s serene ambiance and rich cultural heritage offer a magical retreat for anyone looking to immerse themselves in the beauty and mystique of Morocco.",
                 _createdOn: 1721988560435,
                 _id: "85e5f37f-01d7-4818-9d94-9f057c50b571"
+            },
+            "50f48440-f227-4b8a-aef7-311fab6fb32a": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Egyptian pyramids",
+                location: "Egypt",
+                imageUrl: "https://cdn.mos.cms.futurecdn.net/7YrobQvFFzw8aWsAUtoYXB-1200-80.jpg",
+                description: "The Egyptian pyramids are ancient masonry structures located in Egypt. Sources cite at least 118 identified \"Egyptian\" pyramids. Approximately 80 pyramids were built within the Kingdom of Kush, now located in the modern country of Sudan. Of those located in modern Egypt, most were built as tombs for the country's pharaohs and their consorts during the Old and Middle Kingdom periods.\n\nThe earliest known Egyptian pyramids are found at Saqqara, northwest of Memphis, although at least one step-pyramid-like structure has been found at Saqqara, dating to the First Dynasty: Mastaba 3808, which has been attributed to the reign of Pharaoh Anedjib, with inscriptions, and other archaeological remains of the period, suggesting there may have been others. The otherwise earliest among these is the Pyramid of Djoser built c. 2630–2610 BCE during the Third Dynasty. This pyramid and its surrounding complex are generally considered to be the world's oldest monumental structures constructed of dressed masonry.\n\nThe most famous Egyptian pyramids are those found at Giza, on the outskirts of Cairo. Several of the Giza pyramids are counted among the largest structures ever built.[9] The Pyramid of Khufu is the largest Egyptian pyramid and the last of the Seven Wonders of the Ancient World still in existence, despite being the oldest by about 2,000 years.",
+                _createdOn: 1722936366816,
+                _id: "50f48440-f227-4b8a-aef7-311fab6fb32a",
             }
         }
         ,
