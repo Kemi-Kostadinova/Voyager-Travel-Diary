@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +11,11 @@ export default function SignUp() {
     const register = useRegister();
     const navigate = useNavigate();
 
+    const [error, setError] = useState("");
+
     const registerHandler = async ({ email, username, profileImage, password, rePassword }) => {
         if (password !== rePassword) {
-            console.log("Passwords don`t match");
-            return;
+            return setError("Passwords don`t match");
         }
 
         try {
@@ -21,7 +23,7 @@ export default function SignUp() {
 
             navigate('/discover');
         } catch (err) {
-            console.log(err.message);
+            setError(err.message);
         }
     }
 
@@ -42,6 +44,11 @@ export default function SignUp() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    {error && (
+                        <div className="mb-4 text-red-600 text-center">
+                            {error}
+                        </div>
+                    )}
                     <form onSubmit={onSubmit} className="space-y-6">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">

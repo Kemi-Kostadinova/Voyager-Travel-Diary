@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm"
@@ -9,14 +10,23 @@ export default function CreateEntry() {
     const createEntry = useCreateEntry();
     const navigate = useNavigate()
 
+    const [error, setError] = useState("");
+
     const createHandler = async (values) => {
+        const { title, location, imageUrl, description } = values
+
+        if (!title || !location || !imageUrl || !description) {
+            return setError("All fields are required");
+        }
+
         try {
             const { _id: travelEntryId } = await createEntry(values);
 
             navigate(`/details/${travelEntryId}`);
         } catch (err) {
-            console.log(err.message);
+            setError(err.message);
         }
+
     }
 
     const { values, onChange, onSubmit } = useForm(initialValues, createHandler);
@@ -29,6 +39,12 @@ export default function CreateEntry() {
                         Add new entry
                     </h2>
                 </div>
+
+                {error && (
+                    <div className="mb-4 text-red-600 text-center">
+                        {error}
+                    </div>
+                )}
 
                 <form onSubmit={onSubmit}>
                     <div className="lg:my-14 my-8 grid  grid-cols-1 gap-8">
