@@ -2,7 +2,9 @@ import { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { LikesContext } from "../../contexts/LikesContext";
 import { useGetOneEntry } from "../../hooks/useTravelEntries";
+import { useAddLike, useDeleteLike } from "../../hooks/useLikes";
 
 import CommentSection from "../comment-section/CommentSection";
 import DeleteEntry from "../delete-entry/DeleteEntry";
@@ -10,7 +12,29 @@ import DeleteEntry from "../delete-entry/DeleteEntry";
 export default function Details() {
     const { travelEntryId } = useParams();
     const travelEntry = useGetOneEntry(travelEntryId);
-    const { userId } = useContext(AuthContext);
+
+    const { userId, isAuthenticated } = useContext(AuthContext);
+    const { likesState, toggleLike } = useContext(LikesContext);
+
+    const addLike = useAddLike();
+    const deleteLike = useDeleteLike();
+
+    const liked = likesState[travelEntryId];
+
+    const likeHnadler = async () => {
+        try {
+            toggleLike(travelEntryId);
+
+            if (liked) {
+                await deleteLike(travelEntryId, userId);
+            } else {
+                await addLike(travelEntryId);
+            }
+
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     const [showDelete, setshowDelete] = useState(false);
 
@@ -18,7 +42,7 @@ export default function Details() {
 
     return (
         <div className="max-w-screen-xl mx-auto p-5 sm:p-8 md:p-20 relative">
-            {showDelete && <DeleteEntry onClose={() => setshowDelete(false)} travelEntryId={travelEntryId}/>}
+            {showDelete && <DeleteEntry onClose={() => setshowDelete(false)} travelEntryId={travelEntryId} />}
             <div
                 className="bg-cover h-64 text-center overflow-hidden"
                 style={{
@@ -45,8 +69,8 @@ export default function Details() {
                                     </a>
                                 </p>
                             </div>
-                            <button className="group transition-all duration-500 p-0.5">
-                                <svg
+                            {isAuthenticated && <button onClick={likeHnadler} className="group transition-all duration-500 p-0.5">
+                                {/* <svg
                                     width={60}
                                     height={60}
                                     viewBox="0 0 60 60"
@@ -69,8 +93,35 @@ export default function Details() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                     />
+                                </svg> */}
+
+                                <svg
+                                    width={60}
+                                    height={60}
+                                    viewBox="0 0 60 60"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        className="fill-[#E4EEF3] transition-all duration-500 group-hover:fill-[#C6E7F4]"
+                                        cx={30}
+                                        cy={30}
+                                        r={30}
+                                        fill="#E4EEF3"
+                                    />
+                                    <path
+                                        className="stroke-[#0CA9E8] transition-all duration-500 group-hover:stroke-[#008bb5]"
+                                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        fill={liked ? "#0CA9E8" : "none"}
+                                        strokeWidth="1.6"
+                                        strokeMiterlimit={10}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        transform="scale(1.2) translate(13, 13)" // Adjust as needed
+                                    />
                                 </svg>
-                            </button>
+
+
+                            </button>}
                         </div>
 
 

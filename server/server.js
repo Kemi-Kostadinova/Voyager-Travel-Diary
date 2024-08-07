@@ -1418,6 +1418,44 @@
                 _id: "5beaafab-1464-4129-98cc-778880739519"
             }
         },
+        likes: {
+                "224b3565-1eea-4e3c-9817-670fcf565a2e": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "fb1335a0-f706-49d5-8223-bc498275c142",
+                    _createdOn: 1722952259470,
+                    _id: "224b3565-1eea-4e3c-9817-670fcf565a2e"
+                },
+                "77cf87d3-c0bc-4197-bbc6-d6b144ce24d8": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "abbb1d52-e1c5-4741-9d60-e97abf391a4c",
+                    _createdOn: 1722953179768,
+                    _id: "77cf87d3-c0bc-4197-bbc6-d6b144ce24d8"
+                },
+                "516249c2-af19-4e9e-a0d9-6c9dcee0378d": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "abbb1d52-e1c5-4741-9d60-e97abf391a4c",
+                    _createdOn: 1722953188376,
+                    _id: "516249c2-af19-4e9e-a0d9-6c9dcee0378d"
+                },
+                "2f58cfa7-2a40-4bda-8b7b-5d4d7a651ad0": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "abbb1d52-e1c5-4741-9d60-e97abf391a4c",
+                    _createdOn: 1722953209541,
+                    _id: "2f58cfa7-2a40-4bda-8b7b-5d4d7a651ad0"
+                },
+                "e7b25371-b2c9-45b3-96ee-39ec518f680a": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "95f14740-2656-4e6b-b967-8a439d45edba",
+                    _createdOn: 1722953214231,
+                    _id: "e7b25371-b2c9-45b3-96ee-39ec518f680a"
+                },
+                "4207cd66-b543-47d3-9aec-03998dd25cef": {
+                    _ownerId: "83a9a11b-0afa-40e7-b240-2e25e6902e4a",
+                    travelEntryId: "95f14740-2656-4e6b-b967-8a439d45edba",
+                    _createdOn: 1722953217288,
+                    _id: "4207cd66-b543-47d3-9aec-03998dd25cef"
+                }
+        }
     };
     var rules$1 = {
         users: {
