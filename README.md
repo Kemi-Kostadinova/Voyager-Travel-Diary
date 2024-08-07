@@ -82,7 +82,7 @@ Run server:
   cd server 
   node server.js
 ```
-* Once the server is started, it will listen for requests on: http://localhost:3000
+* Once the server is started, it will listen for requests on: http://localhost:3030
 ## Screenshots
 
 ### Home
