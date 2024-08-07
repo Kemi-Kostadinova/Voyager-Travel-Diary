@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { toast } from "react-toastify";
 
 import { useDeleteEntry } from '../../hooks/useTravelEntries';
 
@@ -15,6 +16,10 @@ export default function DeleteEntry({ travelEntryId, onClose }) {
             navigate('/discover');
         } catch (err) {
             console.log(err.message);
+            toast.error(`Error on delete enrty: ${err.message}`, {
+                position: "top-right",
+                autoClose: 3000,
+              });
         }
     }
 

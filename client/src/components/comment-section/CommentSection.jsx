@@ -1,29 +1,34 @@
 import { useState, useContext } from "react";
+import { toast } from "react-toastify";
 
 import { useForm } from "../../hooks/useForm";
+import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 import { AuthContext } from "../../contexts/AuthContext";
 
 import UserComment from "./user-comment/UserComment";
-import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
 
 const initialValues = { comment: "" };
 
 export default function CommentSection({ travelEntryId }) {
     const { profileImage, isAuthenticated } = useContext(AuthContext);
-    
+
     const [commentChangeTrigger, setCommentChangeTrigger] = useState(0);
     const [comments, setComments] = useGetAllComments(travelEntryId, commentChangeTrigger);
     const createComment = useCreateComment()
 
-    const commentSubmitHandler = async ({comment}) => {
+    const commentSubmitHandler = async ({ comment }) => {
         try {
             const newComment = await createComment(travelEntryId, comment);
 
             setComments((oldComments) => [...oldComments, newComment]);
             setCommentChangeTrigger((prev) => prev + 1);
-            
+
         } catch (err) {
             console.log(err.message);
+            toast.error(`Error on comments: ${err.message}`, {
+                position: "top-right",
+                autoClose: 3000,
+            });
         }
     }
 
@@ -61,7 +66,7 @@ export default function CommentSection({ travelEntryId }) {
                             </span>
                         </button>
                     </form>}
-                    
+
                     <div className="w-full flex-col justify-start items-start gap-8 flex">
                         {comments?.length > 0
                             ? comments.map(comment => <UserComment key={comment._id} {...comment} />)

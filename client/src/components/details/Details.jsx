@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { LikesContext } from "../../contexts/LikesContext";
@@ -32,7 +33,11 @@ export default function Details() {
             }
 
         } catch (error) {
-            console.error(error);
+            console.log(error);
+            toast.error(`Error on like: ${err.message}`, {
+                position: "top-right",
+                autoClose: 3000,
+            });
         }
     };
 
