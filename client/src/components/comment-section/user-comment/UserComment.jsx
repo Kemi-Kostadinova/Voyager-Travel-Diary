@@ -7,7 +7,6 @@ export default function UserComment({
     _createdOn
 }) {
 
-    // console.log(author, "from comment");
     return (
         <div className="w-full lg:p-8 p-5 bg-white rounded-3xl border border-gray-200 flex-col justify-start items-start flex">
             <div className="w-full flex-col justify-start items-start gap-3.5 flex">

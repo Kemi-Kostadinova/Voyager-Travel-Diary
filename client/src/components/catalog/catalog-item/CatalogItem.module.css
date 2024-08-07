@@ -30,8 +30,7 @@
 }
 
 .cardImage {
-    max-height: 10rem;
-    min-height: 10rem;
+    height: 10rem;
     width: 100%;
     object-fit: cover;
     border-radius: 1.5rem;
