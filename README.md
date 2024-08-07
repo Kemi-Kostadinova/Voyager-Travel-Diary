@@ -104,7 +104,7 @@ Run server:
 ![App Screenshot](/client/public/create.png)
 
 ### Details
-![App Screenshot](/client/public/deatils.png)
+![App Screenshot](/client/public/details.png)
 
 ### Profile
 ![App Screenshot](/client/public/profile.png)
